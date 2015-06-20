@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/05/2015 08:57:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.celso.fichaa.model.Endereco" table="endereco" catalog="ficha" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="tipoLogradoro" type="string">
+            <column name="TIPO_LOGRADORO" length="20" />
+        </property>
+        <property name="nomeLogradoro" type="string">
+            <column name="NOME_LOGRADORO" length="45" />
+        </property>
+        <property name="complemento" type="string">
+            <column name="COMPLEMENTO" length="185" />
+        </property>
+        <property name="bairro" type="string">
+            <column name="BAIRRO" length="45" />
+        </property>
+        <property name="municipio" type="string">
+            <column name="MUNICIPIO" length="45" />
+        </property>
+        <property name="uf" type="string">
+            <column name="UF" length="2" />
+        </property>
+        <property name="cep" type="string">
+            <column name="CEP" length="45" />
+        </property>
+        <property name="numero" type="java.lang.Integer">
+            <column name="NUMERO" />
+        </property>
+        <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ENDERECO_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.celso.fichaa.model.Domicilio" />
+        </set>
+    </class>
+</hibernate-mapping>

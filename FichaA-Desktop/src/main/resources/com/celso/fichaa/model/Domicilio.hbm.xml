@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/05/2015 08:57:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.celso.fichaa.model.Domicilio" table="domicilio" catalog="ficha" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="agua" class="com.celso.fichaa.model.Agua" fetch="select">
+            <column name="AGUA_ID" />
+        </many-to-one>
+        <many-to-one name="destinoLixo" class="com.celso.fichaa.model.DestinoLixo" fetch="select">
+            <column name="DESTINO_LIXO_ID" />
+        </many-to-one>
+        <many-to-one name="endereco" class="com.celso.fichaa.model.Endereco" fetch="select">
+            <column name="ENDERECO_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="escoamento" class="com.celso.fichaa.model.Escoamento" fetch="select">
+            <column name="ESCOAMENTO_ID" />
+        </many-to-one>
+        <many-to-one name="localizacao" class="com.celso.fichaa.model.Localizacao" fetch="select">
+            <column name="LOCALIZACAO_ID" />
+        </many-to-one>
+        <many-to-one name="paredes" class="com.celso.fichaa.model.Paredes" fetch="select">
+            <column name="PAREDES_ID" />
+        </many-to-one>
+        <many-to-one name="producaoRural" class="com.celso.fichaa.model.ProducaoRural" fetch="select">
+            <column name="PRODUCAO_RURAL_ID" />
+        </many-to-one>
+        <many-to-one name="profissional" class="com.celso.fichaa.model.Profissional" fetch="select">
+            <column name="Profissional_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="situacaoMoradia" class="com.celso.fichaa.model.SituacaoMoradia" fetch="select">
+            <column name="SITUACAO_MORADIA_ID" />
+        </many-to-one>
+        <many-to-one name="telefoneReferencia" class="com.celso.fichaa.model.TelefoneReferencia" fetch="select">
+            <column name="TELEFONE_REFERENCIA_ID" />
+        </many-to-one>
+        <many-to-one name="telefoneResidencial" class="com.celso.fichaa.model.TelefoneResidencial" fetch="select">
+            <column name="TELEFONE_RESIDENCIAL_ID" />
+        </many-to-one>
+        <many-to-one name="tipoAcesso" class="com.celso.fichaa.model.TipoAcesso" fetch="select">
+            <column name="TIPO_ACESSO_ID" />
+        </many-to-one>
+        <many-to-one name="tipoDomicilio" class="com.celso.fichaa.model.TipoDomicilio" fetch="select">
+            <column name="TIPO_DOMICILIO_ID" />
+        </many-to-one>
+        <many-to-one name="tratamentoAgua" class="com.celso.fichaa.model.TratamentoAgua" fetch="select">
+            <column name="TRATAMENTO_AGUA_ID" />
+        </many-to-one>
+        <property name="numeroMoradores" type="java.lang.Integer">
+            <column name="NUMERO_MORADORES" />
+        </property>
+        <property name="numeroComodos" type="java.lang.Integer">
+            <column name="NUMERO_COMODOS" />
+        </property>
+        <property name="animais" type="java.lang.Boolean">
+            <column name="ANIMAIS" />
+        </property>
+        <property name="numeroAnimais" type="java.lang.Integer">
+            <column name="NUMERO_ANIMAIS" />
+        </property>
+        <set name="animaises" table="domicilio_animais" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="DOMICILIO_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.celso.fichaa.model.Animais">
+                <column name="ANIMAIS_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

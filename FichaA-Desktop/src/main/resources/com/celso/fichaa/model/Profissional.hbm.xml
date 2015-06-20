@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/05/2015 08:57:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.celso.fichaa.model.Profissional" table="profissional" catalog="ficha" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cartId" type="java.lang.Integer">
+            <column name="CART_ID" />
+        </property>
+        <property name="cnes" type="string">
+            <column name="CNES" length="7" />
+        </property>
+        <property name="equipe" type="string">
+            <column name="EQUIPE" length="10" />
+        </property>
+        <property name="microarea" type="string">
+            <column name="MICROAREA" length="2" />
+        </property>
+        <property name="data" type="timestamp">
+            <column name="DATA" length="19" />
+        </property>
+        <property name="nome" type="string">
+            <column name="NOME" length="200" />
+        </property>
+        <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Profissional_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.celso.fichaa.model.Domicilio" />
+        </set>
+    </class>
+</hibernate-mapping>

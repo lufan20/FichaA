@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/05/2015 08:57:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.celso.fichaa.model.ProducaoRural" table="producao_rural" catalog="ficha" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="producaoRural" type="string">
+            <column name="PRODUCAO_RURAL" length="85" />
+        </property>
+        <set name="domicilios" table="domicilio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PRODUCAO_RURAL_ID" />
+            </key>
+            <one-to-many class="com.celso.fichaa.model.Domicilio" />
+        </set>
+    </class>
+</hibernate-mapping>

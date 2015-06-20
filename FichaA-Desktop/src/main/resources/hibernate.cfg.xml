@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ficha</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.connection.password">1605</property>
+    <mapping resource="com/celso/fichaa/model/ProducaoRural.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Endereco.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Escoamento.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/SituacaoMoradia.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/TipoDomicilio.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Localizacao.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/TelefoneReferencia.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Profissional.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/TratamentoAgua.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/DestinoLixo.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/TipoAcesso.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Animais.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Agua.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/TelefoneResidencial.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Paredes.hbm.xml"/>
+    <mapping resource="com/celso/fichaa/model/Domicilio.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

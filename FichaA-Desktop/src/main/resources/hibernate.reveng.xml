@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="ficha"/>
+  <table-filter match-name="endereco"/>
+  <table-filter match-name="profissional"/>
+  <table-filter match-name="situacao_moradia"/>
+  <table-filter match-name="destino_lixo"/>
+  <table-filter match-name="telefone_referencia"/>
+  <table-filter match-name="paredes"/>
+  <table-filter match-name="telefone_residencial"/>
+  <table-filter match-name="escoamento"/>
+  <table-filter match-name="animais"/>
+  <table-filter match-name="domicilio_animais"/>
+  <table-filter match-name="tipo_acesso"/>
+  <table-filter match-name="localizacao"/>
+  <table-filter match-name="domicilio"/>
+  <table-filter match-name="producao_rural"/>
+  <table-filter match-name="agua"/>
+  <table-filter match-name="tratamento_agua"/>
+  <table-filter match-name="tipo_domicilio"/>
+</hibernate-reverse-engineering>
